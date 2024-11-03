@@ -1,6 +1,6 @@
 #!/bin/bash
 state=$(curl -Ls https://google.com)
-if [ $state -eq 200 ]
+if [ $(state)==200 ]
 then
 echo "reachable"
 else 
