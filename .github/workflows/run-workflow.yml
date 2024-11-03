@@ -1,0 +1,22 @@
+name: Run Workflow
+
+on: 
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+  workflow_dispatch:  # Allows manual trigger in GitHub Actions tab
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run shell script
+        run:
+          echo "Starting the workflow..."
+          # Add your commands here
+          ls -al
+          echo "Workflow completed!"
